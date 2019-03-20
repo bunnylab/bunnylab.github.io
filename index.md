@@ -3,3 +3,6 @@ building full-stack web applications and doing interesting things
 with data.
 
 Secret c and Rust enthusiast.
+
+[CV](./cv)
+[Blog](./blog)
