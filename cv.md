@@ -2,15 +2,15 @@
 
 ### Education
 
-MS Cognitive & Information Science (2014) | UC Merced
-BS Cognitive Science (2011)               | UC Santa Cruz
+MS Cognitive & Information Science, UC Merced            | 2014
+BS Cognitive Science (Magna Cum Laude), UC Santa Cruz    | 2011
 
 ### Work
 
-Software Engineer (2018-?)                | Zybooks
-Software Engineer (2017-2018)             | Psymark
-Machine Learning Consultant (2014-2017)   | Psymark
-Information Systems Developer (2016-2017) | UC Merced Engineering
+Software Engineer, ZyBooks                           | 2018-?
+Software Engineer, Psymark                           | 2017-2018
+Machine Learning Consultant, Psymark                 | 2014-2017
+Information Systems Developer, UC Merced Engineering | 2016-2017
 
 ### Publications
 
