@@ -1,8 +1,8 @@
-Programmer with a background in cognitive science. Working on
-building full-stack web applications and doing interesting things
-with data.
+Software engineer and former cognitive scientist. Broadly experienced working up, down, 
+and across stacks. Background working with and building machine learning products with
+human behavioral data. Interested in statistics, machine learning, security and cryptography. 
 
-Secret c and Rust enthusiast.
+Secret C and Rust enthusiast.
 
-[CV](./cv)
-[Blog](./blog)
+* [CV](./cv)
+* [Blog](./blog)
