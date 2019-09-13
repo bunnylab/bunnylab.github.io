@@ -4,6 +4,4 @@ In which I talk about a variety of topics related to tech or
 whatever else I'm working on. Opinions are my own and do not
 represent the view of my employers or any other human beings.
 
-* 1
-* 2
-* 3
+* [Maturana](./blog/maturana) 
