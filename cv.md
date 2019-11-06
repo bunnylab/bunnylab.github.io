@@ -16,7 +16,8 @@ Machine Learning Consultant, Psymark                 | 2014-2017
 
 Python, Javascript, C, C++, Java, SQL,
 Flask, Ember, jQuery, SQLAlchemy, Celery, Pandas, Numpy,
-Scikit-learn, nltk, Git, Linux/Unix, Redis, AWS, Redshift
+Scikit-learn, nltk, Git, Linux/Unix, Redis, AWS, Redshift,
+Docker, Kubernetes
 
 ### Additional Training
 
