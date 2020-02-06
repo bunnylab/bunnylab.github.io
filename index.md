@@ -6,3 +6,4 @@ machine learning, security and cryptography.
 Secret C and Rust enthusiast.
 
 * [CV](./cv)
+* [Public Key](./public_key)
