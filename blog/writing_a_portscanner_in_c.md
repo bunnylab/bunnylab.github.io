@@ -6,19 +6,19 @@ available and support lots of different methods for port and service discovery.
 But I thought writing my own would be a fun way to learn about some network
 programming techniques. Why do it in C? Well C is fun and in the case of
 sockets/networks the relevant headers and code were generally written in C
-themselves so its a great way to dig into what's happening. But feel free to
+themselves so it's a great way to dig into what's happening. But feel free to
 use whatever you like.
 
 ### Simple TCP Connection scanner
 
 The simplest type of portscanner is a TCP connection scanner. For each port in
 the range 1 to 65535 (unsigned 16 bit int with 0 reserved as a control port).
-We attempt to make a TCP connection to each port in sequence if the port is
-open the connection will succeed with the [TCP 3-way handshake](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Connection_establishment). If the port is closed
-the host should respond to the initial SYN packet with a RST/ACK acknowledging
-receipt of the initial SYN packet and terminating the connection.
+We attempt to make a TCP connection to each port in sequence. If the port is
+open the connection will succeed with a full [TCP 3-way handshake](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Connection_establishment). If the port is closed
+the host should respond to the SYN packet with a RST/ACK packet acknowledging
+receipt of the SYN packet and terminating the connection attempt.
 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/socket.h>
@@ -53,7 +53,9 @@ int main(int argc, char* argv[]){
     server.sin_port = htons(i);
 
     // Attempt to connect to the server on port i
-    if ( !(connect(socket_desc , (struct sockaddr *)&server , sizeof(server)) < 0) )
+    if ( !(connect(socket_desc,
+          (struct sockaddr *)&server,
+          sizeof(server)) < 0) )
     {
       printf("Connected on: %d\n", i);
     }
@@ -67,20 +69,21 @@ int main(int argc, char* argv[]){
 ### Polling TCP Connection Scanner
 
 Our basic TCP connection scanner works pretty well but it has a few problems.
-Worst issue is that out main loop with calls to `connect()` is blocking which
+Worst issue is that our main loop with calls to `connect()` is blocking which
 seriously limits our scanning speed. We could make a threaded scanner but since
-sockets are file descriptors. We can use [poll](https://www.man7.org/linux/man-pages/man2/poll.2.html) to open a lot of sockets at once and wait for their return without
+sockets are file descriptors we can use [poll](https://www.man7.org/linux/man-pages/man2/poll.2.html) to open a lot of sockets at once and wait for their return without
 blocking or parallelizing each. There seems to be a limit of around 1024
-sockets that poll can have open at once, so we set a number of ports below that
-as our maximum chunk and poll for those, stepping through the port numbers
-until we finish. The big limiter for performance of this scanner seems to be
-the timeout for the tcp connection attempt. Filtered ports cause a timeout on
-the connection attempt. This locks each polled set of ports to taking at least
-the maximum timeout if there is a filtered port (there is always a filtered port).
+sockets that poll can monitor, so we set a number of ports below that
+as our maximum set of ports and call poll on those, stepping through the port numbers
+until we finish. The limiter for performance of this scanner seems to be
+the timeout for the tcp connection attempt. Filtered ports will send a response
+packet to a connection attempt which causes the connection to timeout. Each call
+to poll completes when all polled ports are finished which will take the maximum
+connection timeout duration if there is a filtered port (there is always a filtered port).
 So we could improve this by: tweaking the timeout, updating our polling set
 as each socket returns rather than waiting for all to finish.
 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/socket.h>
@@ -158,14 +161,14 @@ int main(int argc, char* argv[]){
 ### Raw Socket Scanners
 
 I also wanted to try writing a scanner using raw sockets to learn a little more
-about them. Here I ran into some interesting issues with how receiving packets
-are handled. There are a few different scanner types such as half-open / idle
-scanners that rely on raw sockets to craft custom tcp packets and determine the
-state of the host ports from the responses. However, the socket interface only
-sends packets from icmp/igmp and unidentified protocols to raw sockets. TCP/UDP
+about them. Here I ran into some interesting issues with how receiving response
+packets are handled for raw socketss. There are a few different scanner types such
+as half-open / idle scanners that rely on raw sockets to craft custom tcp packets
+and determine the state of the host ports from the responses. However, the socket
+interface only sends packets from icmp/igmp and unidentified protocols to raw sockets. TCP/UDP
 packets will only be routed to tcp and udp sockets. So if my reading is correct
 a scanner sending custom tcp/udp packets on a raw socket cannot receive the replies.
-To work around this problem these types of scanners uses pcap or other libraries
+To work around this problem these types of scanners use pcap or other libraries
 to read the response packets directly off the network interface. This is a cool
 trick but a little beyond what I wanted to bite off. So instead lets write a syn flooder.
 
@@ -177,9 +180,9 @@ and importantly leaves the connection open waiting for a response. The idea
 of the SYN flooder is to cause a disruption by sending many syn packets and
 exhausting resources used to keep open the waiting connections. To do this we
 have to bypass the normal TCP stack (which will try to do a full handshake)
-and just send the initial SYN packet using a [raw socket](https://en.wikipedia.org/wiki/Network_socket#Types)
+and just send the initial SYN packet using a [raw socket](https://en.wikipedia.org/wiki/Network_socket#Types).
 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -263,16 +266,16 @@ int main(int argc, char* argv[]){
 }
 ```
 
-There's a couple things I omitted from this program, it should work for testing
-on localhost but creating a fully functional version is left as an exercise for
-the reader :). Mainly we did not calculate and set the TCP checksum. This is a
-good example of how powerful raw sockets are. We create the packet to send
+This is a good example of how powerful raw sockets are. We create the packet to send
 as a buffer and use the system headers for ip/tcp to set the appropriate values.
 This gives full control over all fields including the ability to spoof source
 address and other values that would normally be set by the kernel.
 
-### Postscript
+There are a couple things I omitted from this program, it should work for testing
+on localhost but creating a fully functional version is left as an exercise for
+the reader :). Mainly we did not calculate and set the TCP checksum.
 
-This ended up being a pretty fun way to mess around some more with socket
-programming. Wireshark, man and looking through the netinet headers were
-very useful tools. 
+### Useful Resources
+
+[Tenouk tcp/ip tutorial](https://www.tenouk.com/Module42.html)
+[Wireshark](https://www.wireshark.org/)
