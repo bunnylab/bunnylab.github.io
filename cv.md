@@ -26,7 +26,7 @@ APA-ATI Nonlinear Methods, Cincinnati     | 2012
 
 ### Publications
 
-Thompson, G. W., & Kello, C. (2014). [Walking across Wikipedia: a scale-free network model of semantic memory retrieval.](https://www.frontiersin.org/articles/10.3389/fpsyg.2014.00086/fullsch) Frontiers in psychology, 5, 86.
+Thompson, G. W., & Kello, C. (2014). [Walking across Wikipedia: a scale-free network model of semantic memory retrieval.](https://www.frontiersin.org/articles/10.3389/fpsyg.2014.00086/full) Frontiers in psychology, 5, 86.
 
 Montez, P., Thompson, G., & Kello, C. T. (2015). [The role of semantic clustering in optimal memory foraging.](https://onlinelibrary.wiley.com/doi/full/10.1111/cogs.12249) Cognitive science, 39(8), 1925-1939.
 
