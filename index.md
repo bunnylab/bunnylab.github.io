@@ -8,3 +8,5 @@ psychological data, building full stack web applications and machine learning pr
 [Blog](./blog)
 
 [Public Key](./public_key.txt)
+
+![](http://173.230.154.136/img/main_page.png)

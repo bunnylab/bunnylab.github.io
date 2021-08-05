@@ -278,4 +278,7 @@ the reader :). Mainly we did not calculate and set the TCP checksum.
 ### Useful Resources
 
 [Tenouk tcp/ip tutorial](https://www.tenouk.com/Module42.html)
+
 [Wireshark](https://www.wireshark.org/)
+
+![](http://173.230.154.136/img/blog-entry-7-20.png)

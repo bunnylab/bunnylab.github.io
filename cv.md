@@ -31,3 +31,5 @@ Thompson, G. W., & Kello, C. (2014). [Walking across Wikipedia: a scale-free net
 Montez, P., Thompson, G., & Kello, C. T. (2015). [The role of semantic clustering in optimal memory foraging.](https://onlinelibrary.wiley.com/doi/full/10.1111/cogs.12249) Cognitive science, 39(8), 1925-1939.
 
 Winter, B., Thompson, G., & Urban, M. (2014). [Cognitive factors motivating the evolution of word meanings: Evidence from corpora, behavioral data and encyclopedic network structure.](https://www.bodo-winter.net/papers/winter_thompson_urban_semantic_change.pdf) In Evolution of Language: Proceedings of the 10th International Conference (EVOLANG10) (pp. 353-360).
+
+![](http://173.230.154.136/img/cv.png)
