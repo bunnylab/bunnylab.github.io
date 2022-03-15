@@ -1,5 +1,6 @@
 ---
 layout: post
+author: Graham Thompson
 ---
 
 
@@ -127,7 +128,7 @@ unicode emojis to encode secret messages.
 For watermarking, methods that use weird unicode characters without altering the 
 text are the most common. Many of these methods are not that difficult to detect. In english text there's no valid reason for most of the weird unicode used to be present. A simple check like the following can pick up most methods.
 
-```
+```python
 blacklist = ['\u200c', '\u202c', '\u200e'] # and etc...
 
 def detect_trickery(str):
@@ -144,7 +145,7 @@ in any detail. At the very least some sort of frequency analysis would be requir
 
 1) Remove everything other than printable ascii characters 
 
-```
+```python
 import string
 
 fishy_string = "h‌‍‏‍e‌‎‎‍l‍‍‎‍l‍‎‏‍o‌‌‎‌ ‏‍‎‍m‏‏‎‍y‌‍‏‍ ‌‌‎‌f‍‏‎‍r‍‍‎‍iend, how is the weather today?"

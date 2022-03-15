@@ -1,3 +1,8 @@
+---
+layout: post
+author: Graham Thompson
+---
+
 # Quick and Dirty Personal Web Analytics with Tracking Pixels
 
 While working on this blog I decided I need some basic web analytics. I don't want anything 
@@ -45,7 +50,6 @@ server {
   }
 
 }
-
 ```
 
 Place one or more tracking pixels in the /img subdirectory and give them 
@@ -84,7 +88,7 @@ Now just place a link like the following in your site, github profile, etc.
 And that's all the setup that's required. Go to 'yourserver.com/views.json` 
 and enjoy your new high tech web analytics solution.
 
-![screenshot](../img/tp-screenshot.png)
+![screenshot](../images/tp-screenshot.png)
 
 ## Github Profiles and Proxying
 

@@ -1,5 +1,6 @@
 ---
 layout: post
+author: Graham Thompson
 ---
 
 ## Writing a PortScanner in C
