@@ -1,3 +1,8 @@
+---
+layout: post
+---
+
+
 # Adventures with Text Steganography
 
 So recently I revisited some old code I had messed with at a job for embedding

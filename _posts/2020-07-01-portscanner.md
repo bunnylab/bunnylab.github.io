@@ -1,3 +1,7 @@
+---
+layout: post
+---
+
 ## Writing a PortScanner in C
 
 A portscanner is a program that tests the state of a targeted port or range of
