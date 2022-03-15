@@ -5,8 +5,6 @@ navbar_entries:
   - title: blog
     url: blog
 
-  - title: 
-
   - title: resume
     url: resume
 
