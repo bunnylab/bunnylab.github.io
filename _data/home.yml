@@ -9,7 +9,7 @@ navbar_entries:
     url: resume
 
 project_entries:
-  - title: Unicode Steganography 
+  - title: Unicode Stego
     url: https://github.com/bunnylab/pyUnicodeSteganography
     desc: Python unicode steganography library. Embed text in other text.
 

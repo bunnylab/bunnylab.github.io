@@ -2,7 +2,7 @@ title: Bunnylab
 author: Graham Thompson
 url: https://bunnylab.github.io # root address of the site
 description: > # description of the site (multiple lines allowed)
-  Personal site for Graham Thompson. Experienced software engineer interested in machine 
+  Personal site for Graham Thompson. Experienced software engineer, former cognitive scientist, interested in machine 
   learning, privacy and security. 
 
 permalink: /:slug
