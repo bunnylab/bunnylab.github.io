@@ -107,6 +107,6 @@ we can still get a view count by setting non-caching headers or returning a 404 
 is just link to a non-existent asset) which forces the proxy to attempt to redownload the 
 asset from our server every time someone hits the replaced link.
 
-![](http://173.230.154.136/img/blog-entry-2-25.png)
+![](https://bunnylab.net/img/blog-entry-2-25.png)
 
 

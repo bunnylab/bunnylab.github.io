@@ -171,4 +171,4 @@ couple simple steganography methods with special characters. If I continue
 playing with the subject in the future I think I'd like to attempt some of the 
 language based methods which I think are more relevant for message hiding. 
 
-![](http://173.230.154.136/img/blog-entry-8-21.png)
+![](https://bunnylab.net/img/blog-entry-8-21.png)
