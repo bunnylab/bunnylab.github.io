@@ -17,6 +17,10 @@ project_entries:
     url: https://github.com/bunnylab/overkill-chat
     desc: Secure p2p chat program. Tor, rust, noiselib.  
 
+  - title: Cryptoneko Chatroom
+    url: https://cryptoneko.bunnylab.net
+    desc: Websocket based scalable encrypted chatroom, tornado, js.  
+
   - title: Easy IAT
     url: https://github.com/bunnylab/EasyIAT
     desc: Implementation of the classic IAT psychology protocol for the web. 
