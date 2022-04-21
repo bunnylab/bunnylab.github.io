@@ -6,7 +6,10 @@ navbar_entries:
     url: blog
 
   - title: resume
-    url: resume
+    url: thompson_resume2022.pdf
+    
+  - title: pgp
+    url: public_key.txt
 
 project_entries:
   - title: Unicode Stego
